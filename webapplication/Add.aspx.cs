@@ -18,37 +18,35 @@ namespace webapplication
 
 		void addNewUser()
 		{
-			//handle images
-			string contentType = image.PostedFile.ContentType;
-			using (Stream fs = image.PostedFile.InputStream) 
-			{
-				using (BinaryReader br = new BinaryReader(fs))
-				{ 
-					using (MySqlConnection conn = new MySqlConnection("server=localhost;database=webapp; user=root;port=3306;password=root;")) 
-					{ 
-						try
-						{
-							string insertQuery = "INSERT INTO student(firstName, middleInitial, lastName, mobileNumber1, mobileNumber2, avatar, programme_id, club_id)" +
-								"VALUES( '" + fname.Text + "','" + mname.Text + "','" + lname.Text + "','" + phoneNumberOne.Text + "','" + phoneNumberTwo.Text + "','" + image.FileName + "','" + ProgramList.Text + "','" + club.Text + "')";
-							MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
-							conn.Open();
-							cmd.ExecuteReader();
-							Console.WriteLine("data entered");
-							Server.Transfer("Search.aspx", true);
 
-							conn.Close();
-						}
-						catch (MySqlException ex)
-						{
-							MessageBox.Show("Error Joe" + ex);
-						}
-					
-					}
+			MySqlConnection conn = new MySqlConnection("server=localhost;database=webapp; user=root;port=3306;password=root");
+			if (image.PostedFile != null) 
+			{
+				// create file path for image
+				string FileName = Path.GetFileName(image.PostedFile.FileName);
+				image.SaveAs(Server.MapPath("images/" + FileName));
+
+				// query database
+				string insertQuery = "INSERT INTO student(firstName, middleInitial, lastName, mobileNumber1, mobileNumber2, avatar, avatarpath, programme_id, club_id)" +
+					"VALUES( '" + fname.Text + "','" + mname.Text + "','" + lname.Text + "','" + phoneNumberOne.Text + "','" + phoneNumberTwo.Text + "','" + image.FileName + "','images/"+ image.FileName +"','" + ProgramList.Text + "','" + club.Text + "')";
+				MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
+
+				try
+				{
+					conn.Open();
+					cmd.ExecuteReader();
+					MessageBox.Show("data entered");
+					Server.Transfer("Search.aspx", true);
+				}
+				catch (MySqlException ex)
+				{
+					MessageBox.Show("error jack" + ex);
+				}
+				finally
+				{
+					conn.Close();
 				}
 			}
-
-
-
 
 		}
 	}

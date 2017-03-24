@@ -26,5 +26,7 @@ namespace webapplication {
 		protected System.Web.UI.WebControls.TextBox id;
 		
 		protected System.Web.UI.WebControls.Button searchBtn;
+		
+		protected System.Web.UI.WebControls.GridView StudentGridView;
 	}
 }

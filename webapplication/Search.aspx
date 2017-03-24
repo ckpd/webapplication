@@ -22,8 +22,25 @@
 			<p>ID</p>
 			<asp:TextBox id="id" runat="server"></asp:TextBox>
 			<asp:Button id="searchBtn" Text="Search" OnClick="searchBtn_Click"  runat="server" />
-
+	
 				</div>
 	</form>
+
+
+	<div>
+
+	<asp:GridView id="StudentGridView" runat="server" AutoGenerateColumns ="false" DataKeyNames="studentid" >
+
+			<Columns>
+       			 <asp:BoundField DataField="studentid" HeaderText="S.No." />
+       			 <asp:BoundField DataField="firstName" HeaderText="first Name" />
+       			 <asp:BoundField DataField="middleInitial" HeaderText="M.I." />
+       			 <asp:BoundField DataField="lastName" HeaderText="lastName" />
+       			 <asp:ImageField DataImageUrlField="avatarpath" HeaderText="Image" />
+				</Columns>
+			</asp:GridView>
+		</div>
+		
+		
 </body>
 </html>
