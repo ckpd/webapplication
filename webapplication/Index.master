@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" Inherits="webapplication.Index" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <title>Untitled Page</title>
+ <asp:ContentPlaceHolder id="head" runat="server">
+ </asp:ContentPlaceHolder>
+ <link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<a href="Add.aspx">add</a> | 
+	<a href="Update.aspx">update</a> | 
+	<a href="Delete.aspx">delete</a> | 
+	<a href="Search.aspx">search</a> 
+
+               <asp:contentplaceholder id="Main" runat="server" />
+             
+</body>
+</html>

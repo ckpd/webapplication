@@ -26,7 +26,7 @@ namespace webapplication
 			try
 			{
 				conn.Open();
-				string searchQuery = "SELECT * FROM student WHERE studentid ='" + id.Text + "';";
+				string searchQuery = "SELECT * FROM student WHERE studentid = '"+id.Text+"' OR firstName ='" + fname.Text + "';";
 				MySqlCommand cmd = new MySqlCommand(searchQuery, conn);
 				MySqlDataAdapter msda = new MySqlDataAdapter();
 

@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" Inherits="webapplication.Delete" %>
-<!DOCTYPE html>
-<html>
-<head runat="server">
-	<title>Delete</title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" Inherits="webapplication.Delete" %>  
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+
 	<form id="form1" runat="server">
 			<div>
 			<p>fname</p>
@@ -26,5 +23,4 @@
 
 				</div>
 	</form>
-</body>
-</html>
+</asp:Content>

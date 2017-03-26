@@ -13,7 +13,7 @@ namespace webapplication
 
 			protected void Page_Load(object sender, EventArgs args)
 			{
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+				cookieSetter();
 
 				string connStr = "server=localhost;user=root;port=3306;password=root;";
 				MySqlConnection conn = new MySqlConnection(connStr);
@@ -65,5 +65,21 @@ namespace webapplication
 					return;
 				}
 			}
+
+		void cookieSetter()
+		{
+try
+			{
+				if (Request.Cookies["fname"] != null)
+				{
+				//	Label.Text = Server.HtmlEncode(Request.Cookies["fname"].Value) + " So You got this far";
+					Console.WriteLine(Server.HtmlEncode(Request.Cookies["fname"].Value));
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
 		}
+}
 	}
