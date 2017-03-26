@@ -13,7 +13,7 @@ namespace webapplication
 
 			protected void Page_Load(object sender, EventArgs args)
 			{
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+				cookieSetter();
 
 				string connStr = "server=localhost;user=root;port=3306;password=root;";
 				MySqlConnection conn = new MySqlConnection(connStr);
@@ -53,7 +53,7 @@ namespace webapplication
 					connStr = "server=localhost;database=webapp; user=root;port=3306;password=root;";
 					conn = new MySqlConnection(connStr);
 					conn.Open();
-				SQL = "CREATE TABLE IF NOT EXISTS student (studentid INT NOT NULL AUTO_INCREMENT, firstName varchar(50), middleInitial char(50), lastName varchar(50), mobileNumber1 varchar(50), mobileNumber2 varchar(50),avatar blob, programme_id INT, club_id INT, PRIMARY KEY(studentid), FOREIGN KEY(club_id) REFERENCES club(club_id), FOREIGN KEY(programme_id) REFERENCES programme(programme_id));";
+				SQL = "CREATE TABLE IF NOT EXISTS student (studentid INT NOT NULL AUTO_INCREMENT, firstName varchar(50), middleInitial char(1), lastName varchar(50), mobileNumber1 varchar(50), mobileNumber2 varchar(50),avatar varchar(1000), avatarpath varchar(1000), programme_id INT, club_id INT, PRIMARY KEY(studentid), FOREIGN KEY(club_id) REFERENCES club(club_id), FOREIGN KEY(programme_id) REFERENCES programme(programme_id));";
 					cmd = new MySqlCommand(SQL, conn);
 					cmd.ExecuteNonQuery();
 					conn.Close();
@@ -65,5 +65,21 @@ namespace webapplication
 					return;
 				}
 			}
+
+		void cookieSetter()
+		{
+try
+			{
+				if (Request.Cookies["fname"] != null)
+				{
+				//	Label.Text = Server.HtmlEncode(Request.Cookies["fname"].Value) + " So You got this far";
+					Console.WriteLine(Server.HtmlEncode(Request.Cookies["fname"].Value));
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
 		}
+}
 	}

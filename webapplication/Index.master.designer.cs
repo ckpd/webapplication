@@ -11,24 +11,12 @@
 namespace webapplication {
 	
 	
-	public partial class Delete {
+	public partial class Index {
 		
-		protected System.Web.UI.WebControls.Content Content2;
+		protected System.Web.UI.WebControls.ContentPlaceHolder head;
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
-		protected System.Web.UI.WebControls.TextBox fname;
-		
-		protected System.Web.UI.WebControls.TextBox mname;
-		
-		protected System.Web.UI.WebControls.TextBox lname;
-		
-		protected System.Web.UI.WebControls.DropDownList ProgramList;
-		
-		protected System.Web.UI.WebControls.TextBox id;
-		
-		protected System.Web.UI.WebControls.Button searchBtn;
-		
-		protected System.Web.UI.WebControls.Button deleteBtn;
+		protected System.Web.UI.WebControls.ContentPlaceHolder Main;
 	}
 }

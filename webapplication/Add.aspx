@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" Inherits="webapplication.Add" %>
-<!DOCTYPE html>
-<html>
-<head runat="server">
-	<title>AddStudent</title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" Inherits="webapplication.Add" %>  
+
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">  
+
+
 		
 	<form id="form1" runat="server">
 			<div>
@@ -34,6 +33,5 @@
 
 				</div>
 	</form>
-</body>
-</html>
 
+</asp:Content>

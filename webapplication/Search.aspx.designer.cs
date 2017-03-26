@@ -13,6 +13,8 @@ namespace webapplication {
 	
 	public partial class Search {
 		
+		protected System.Web.UI.WebControls.Content Content2;
+		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
 		protected System.Web.UI.WebControls.TextBox fname;
@@ -26,5 +28,7 @@ namespace webapplication {
 		protected System.Web.UI.WebControls.TextBox id;
 		
 		protected System.Web.UI.WebControls.Button searchBtn;
+		
+		protected System.Web.UI.WebControls.GridView StudentGridView;
 	}
 }

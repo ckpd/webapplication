@@ -1,10 +1,7 @@
-﻿<%@ Page Language="C#" Inherits="webapplication.Search" %>
-<!DOCTYPE html>
-<html>
-<head runat="server">
-	<title>Search</title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" Inherits="webapplication.Search" %>  
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+
 	<form id="form1" runat="server">
 			<div>
 			<p>fname</p>
@@ -22,8 +19,23 @@
 			<p>ID</p>
 			<asp:TextBox id="id" runat="server"></asp:TextBox>
 			<asp:Button id="searchBtn" Text="Search" OnClick="searchBtn_Click"  runat="server" />
-
+	
 				</div>
 	</form>
-</body>
-</html>
+
+
+	<div>
+
+	<asp:GridView id="StudentGridView" runat="server" AutoGenerateColumns ="false" DataKeyNames="studentid" >
+
+			<Columns>
+       			 <asp:BoundField DataField="studentid" HeaderText="S.No." />
+       			 <asp:BoundField DataField="firstName" HeaderText="first Name" />
+       			 <asp:BoundField DataField="middleInitial" HeaderText="M.I." />
+       			 <asp:BoundField DataField="lastName" HeaderText="lastName" />
+       			 <asp:ImageField DataImageUrlField="avatarpath" HeaderText="Image" />
+				</Columns>
+			</asp:GridView>
+		</div>
+		
+</asp:Content>

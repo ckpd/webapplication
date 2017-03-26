@@ -77,6 +77,14 @@
     <Content Include="Update.aspx" />
     <Content Include="Delete.aspx" />
     <Content Include="Search.aspx" />
+    <Content Include="public\images\De-La-Grenade-Industries-Ltd-2439.jpg" />
+    <Content Include="public\images\burger.jpg" />
+    <Content Include="public\images\commercialEnergy_header2-1.jpg" />
+    <Content Include="public\images\imgres.png" />
+    <Content Include="public\images\lockup.png" />
+    <Content Include="public\images\projectPLUS.png" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="Index.master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -112,6 +120,15 @@
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Index.master.cs">
+      <DependentUpon>Index.master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.master.designer.cs">
+      <DependentUpon>Index.master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="public\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
