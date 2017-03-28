@@ -1,19 +1,46 @@
-﻿<%@ Master Language="C#" Inherits="webapplication.Index" %>
+<%@ Master Language="C#" Inherits="webapplication.Index" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
- <title>Untitled Page</title>
- <asp:ContentPlaceHolder id="head" runat="server">
- </asp:ContentPlaceHolder>
- <link href="Styles.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<a href="Add.aspx">add</a> | 
-	<a href="Update.aspx">update</a> | 
-	<a href="Delete.aspx">delete</a> | 
-	<a href="Search.aspx">search</a> 
+		<title>Untitled Page</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+		<link href="public/stylesheets/style.css" rel="stylesheet" type="text/css" />
+		</head>
+	<body>
+	  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">WBSD</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="Add.aspx">Add</a></li>
+            <li><a href="Update.aspx">Update</a></li>
+            <li><a href="Delete.aspx">Delete</a></li>
+            <li><a href="Search.aspx">Search</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-               <asp:contentplaceholder id="Main" runat="server" />
-             
-</body>
+		<div class="pull-right date">
+		 <p><%= DateTime.Now.ToString("dddd, MMMM dd") %></p>
+		</div>
+		<asp:contentplaceholder id="Main" runat="server" >
+			<div class="Main">
+				<h1>web based Student Directory</h1>
+			</div>
+		</asp:contentplaceholder>
+	</body>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </html>

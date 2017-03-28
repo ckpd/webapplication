@@ -8,12 +8,12 @@ using System.Web;
 
 namespace webapplication
 {
-
 	public partial class Add : System.Web.UI.Page
 	{
 
 		public void registerClick(object sender, EventArgs args)
 		{
+			//call method to add a new user
 			addNewUser();
 		}
 
