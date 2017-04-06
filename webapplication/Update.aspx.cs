@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace webapplication
@@ -10,9 +11,7 @@ namespace webapplication
 	{
 		MySqlConnection conn = new MySqlConnection("server=localhost;database=webapp; user=root;port=3306;password=root;");
 
-		public void searchBtn_Click (object sender, EventArgs args)
-		{
-		}
+
 		public void updateBtn_Click(object sender, EventArgs args)
 		{
 			updateUser();
@@ -20,7 +19,6 @@ namespace webapplication
 
 		void updateUser()
 		{
-
 			try
 			{
 				string updateQuery = "UPDATE student SET firstName='"+ fname.Text + "',middleInitial='" + mname.Text + "',lastName='" + lname.Text + "' where studentid='"+ id.Text+"';";
@@ -28,7 +26,7 @@ namespace webapplication
 				MySqlDataReader reader;
 				conn.Open();
 				reader = cmd.ExecuteReader();
-				Console.WriteLine("data updated");
+				MessageBox.Show("data updated");
 				while (reader.Read())
 				{
 

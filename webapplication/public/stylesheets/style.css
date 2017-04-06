@@ -6,6 +6,9 @@
     padding-top: 150px;
     font-family: 'Poiret One', cursive;
 }
+.pageTitle {
+	text-align:center;
+}
 
 .navbar{
     background: none;
@@ -36,3 +39,46 @@ nav{
     margin-right: auto;
     margin-top: 5%;
 }
+
+
+/**
+student gridview style
+**/
+
+.StudentGridView {
+  width: 80%;
+  /*this will be the color of the odd row*/
+  background-color: #fff;
+  margin: 5px 0 10px 0;
+  border: solid 1px #525252;
+  border-collapse:collapse;
+  margin: 0 auto;
+  margin-bottom: 10em;
+}
+
+.StudentGridView td {
+  padding: 2px;
+  border: solid 1px lightgray;
+  text-align: center;
+    font-size: 2em;
+
+}
+
+/*header elements*/
+.StudentGridView th {
+  padding: 4px 2px;
+  color: #fff;
+  background: #424242;
+  border-left: solid 1px #525252;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+ 
+}
+.StudentGridView img{
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+}
+
+
