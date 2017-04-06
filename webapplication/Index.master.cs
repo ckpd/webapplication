@@ -7,9 +7,10 @@ namespace webapplication
 {
 	public partial class Index : System.Web.UI.MasterPage
 	{
-
 		protected void Page_Load(object sender, EventArgs args)
 		{
+
+
 			cookieSetter();
 			string connStr = "server=localhost;user=root;port=3306;password=root;";
 			MySqlConnection conn = new MySqlConnection(connStr);
@@ -68,7 +69,6 @@ namespace webapplication
 			{
 				if (Request.Cookies["fname"] != null)
 				{
-					//	Label.Text = Server.HtmlEncode(Request.Cookies["fname"].Value) + " So You got this far";
 					Console.WriteLine(Server.HtmlEncode(Request.Cookies["fname"].Value));
 				}
 			}
@@ -79,4 +79,3 @@ namespace webapplication
 		}
 	}
 }
-

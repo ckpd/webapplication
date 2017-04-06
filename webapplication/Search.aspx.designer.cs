@@ -13,7 +13,7 @@ namespace webapplication {
 	
 	public partial class Search {
 		
-		protected System.Web.UI.WebControls.Content Content2;
+		protected System.Web.UI.WebControls.Content searchPageContent;
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
@@ -24,6 +24,8 @@ namespace webapplication {
 		protected System.Web.UI.WebControls.TextBox lname;
 		
 		protected System.Web.UI.WebControls.DropDownList ProgramList;
+		
+		protected System.Web.UI.WebControls.DropDownList club;
 		
 		protected System.Web.UI.WebControls.TextBox id;
 		

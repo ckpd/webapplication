@@ -25,10 +25,14 @@ namespace webapplication {
 		
 		protected System.Web.UI.WebControls.DropDownList ProgramList;
 		
+		protected System.Web.UI.WebControls.TextBox club;
+		
 		protected System.Web.UI.WebControls.TextBox id;
 		
 		protected System.Web.UI.WebControls.Button searchBtn;
 		
 		protected System.Web.UI.WebControls.Button deleteBtn;
+		
+		protected System.Web.UI.WebControls.GridView StudentGridView;
 	}
 }

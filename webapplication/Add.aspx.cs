@@ -24,7 +24,6 @@ namespace webapplication
 			if (image.PostedFile != null) 
 			{
 				// create file path for image
-
 				string cheat = DateTime.Now.ToString("yyyMMddddhhmmssfffff"); // randomizes the file name based on time including seconds
 				string FileName = Path.GetFileName(image.PostedFile.FileName);
 				if (image.HasFile)

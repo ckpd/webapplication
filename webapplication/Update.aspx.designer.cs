@@ -23,11 +23,7 @@ namespace webapplication {
 		
 		protected System.Web.UI.WebControls.TextBox lname;
 		
-		protected System.Web.UI.WebControls.DropDownList ProgramList;
-		
 		protected System.Web.UI.WebControls.TextBox id;
-		
-		protected System.Web.UI.WebControls.Button searchBtn;
 		
 		protected System.Web.UI.WebControls.Button updateBtn;
 	}

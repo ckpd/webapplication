@@ -1,26 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" Inherits="webapplication.Update" %>  
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-
+<br>
+	<br>
+	<h1 class="pageTitle">Update Student</h1>
 		<form id="form1" runat="server">
-			<div>
-			<p>fname</p>
-			<asp:TextBox id="fname" runat="server"></asp:TextBox>
-			<p>mname</p>
-			<asp:TextBox id="mname" runat="server"></asp:TextBox>
-			<p>lname</p>
-			<asp:TextBox id="lname" runat="server"></asp:TextBox>
-			<p>Programs</p>				
-		    <asp:DropDownList id="ProgramList" runat="server">
-			    <asp:ListItem Value="1">Arts And Science</asp:ListItem>
-				<asp:ListItem Value="2">School Of Medicine</asp:ListItem>
-				<asp:ListItem Value="3">Vet School</asp:ListItem>
-			</asp:DropDownList>
-			<p>ID</p>
-			<asp:TextBox id="id" runat="server"></asp:TextBox>
-			<asp:Button id="searchBtn" Text="Search" OnClick="searchBtn_Click"  runat="server" />
-			<asp:Button id="updateBtn" Text="Update" OnClick="updateBtn_Click"  runat="server" />
-
-				</div>
+  		<div class="form-group">
+			<br/>
+			<p>First Name</p>
+			<asp:TextBox id="fname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p>Middle Initial</p>
+			<asp:TextBox id="mname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p>Last Name</p>
+			<asp:TextBox id="lname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p> Student ID</p>
+			<asp:TextBox id="id"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<asp:Button id="updateBtn" CssClass="btn btn-large btn-success" Text="Update" OnClick="updateBtn_Click"  runat="server" />
+			
+			</div>
 	</form>
 	 </asp:Content>
