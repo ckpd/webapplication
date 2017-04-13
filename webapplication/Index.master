@@ -22,7 +22,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav pull-right">
-            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="Add.aspx">Add</a></li>
             <li><a href="Update.aspx">Update</a></li>
             <li><a href="Delete.aspx">Delete</a></li>
@@ -38,9 +38,16 @@
 		<asp:contentplaceholder id="Main" runat="server" >
 			<div class="Main">
 				<h1>web based Student Directory</h1>
+				<img class="logo" alt="logo" src="public/images/logo2.jpg">
 			</div>
 		</asp:contentplaceholder>
+
+
+		 <footer class="footer">
+      <div class="container">
+        <p class="text-muted">all rights reserved UColC 2017</p>
+      </div>
+    </footer>
 	</body>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
 </html>

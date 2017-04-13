@@ -15,21 +15,19 @@
 			<p>Last Name</p>
 			<asp:TextBox id="lname" CssClass="form-control" runat="server"></asp:TextBox>
 			<br/>
-			<p>Programme Enrolled</p>	
-		    <asp:DropDownList id="ProgramList"  CssClass="form-control" runat="server">
-			    <asp:ListItem Value="1">Arts And Science</asp:ListItem>
-				<asp:ListItem Value="2">School Of Medicine</asp:ListItem>
-				<asp:ListItem Value="3">Vet School</asp:ListItem>
-			</asp:DropDownList>
-			<br/>
-			<p>Club</p>
-				<asp:TextBox id="club" CssClass="form-control" runat="server"></asp:TextBox>
 			<br>
 			<p>Student ID</p>
 			<asp:TextBox id="id" CssClass="form-control"  runat="server"></asp:TextBox>
+			<asp:RangeValidator id="idValidate"  ControlToValidate="id" Type="Integer" MinimumValue="0" MaximumValue="2147483647" Text="Enter a Valid Student ID" runat="server" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="id" ErrorMessage="Please enter a valid student ID"></asp:RequiredFieldValidator>
 			<br/>
 			<asp:Button id="searchBtn"  CssClass="btn btn-success" Text="Search" OnClick="searchBtn_Click"  runat="server" />
 			<asp:Button id="deleteBtn"  CssClass="btn btn-danger" Text="Delete" OnClick="deleteBtn_Click"  runat="server" />
+
+				<br />
+            <br />
+            <br />
+            <br />
 
 				</div>
 
@@ -51,4 +49,17 @@
 
 		
 	</form>
+	<script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want to save data?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
 </asp:Content>

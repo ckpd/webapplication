@@ -14,8 +14,16 @@ namespace webapplication
 
 		public void updateBtn_Click(object sender, EventArgs args)
 		{
-			updateUser();
-		}
+            string confirmValue = Request.Form["confirm_value"];
+            if (confirmValue == "Yes")
+            {
+                 updateUser();
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked cancel!')", true);
+            }
+        }
 
 		void updateUser()
 		{
@@ -26,8 +34,8 @@ namespace webapplication
 				MySqlDataReader reader;
 				conn.Open();
 				reader = cmd.ExecuteReader();
-				MessageBox.Show("data updated");
-				while (reader.Read())
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Student Data Updated.')", true);
+                while (reader.Read())
 				{
 
 					conn.Close();

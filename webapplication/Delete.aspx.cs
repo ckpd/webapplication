@@ -19,15 +19,16 @@ namespace webapplication
 
 		public void deleteBtn_Click(object sender, EventArgs args)
 		{
-			DialogResult result = MessageBox.Show("Are You sure?", "Confirmation", MessageBoxButtons.YesNo);
-			if (result == DialogResult.Yes)
-			{
-				deleteUser();
-			}
-			else if (result == DialogResult.No) {
-				Response.Redirect("Delete.aspx");
-			}
-		}
+            string confirmValue = Request.Form["confirm_value"];
+            if (confirmValue == "Yes")
+            {
+                deleteUser();
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked NO!')", true);
+            }
+        }
 
 		void deleteUser()
 		{
@@ -39,8 +40,8 @@ namespace webapplication
 				MySqlDataReader reader;
 				conn.Open();
 				reader = cmd.ExecuteReader();
-				Console.WriteLine("data deleted");
-				while (reader.Read())
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Student Deleted!!')", true);
+                while (reader.Read())
 				{
 
 					conn.Close();
@@ -60,7 +61,7 @@ namespace webapplication
 			try
 			{
 				conn.Open();
-				string searchQuery = "SELECT * FROM student WHERE studentid = '" + id.Text + "' OR firstName ='" + fname.Text + "' OR middleInitial ='" + mname.Text + "' OR lastName ='" + lname.Text + "' OR programme_id ='" + ProgramList.Text + "' OR club_id ='" + club.Text + "';";
+				string searchQuery = "SELECT * FROM student WHERE studentid = '" + id.Text + "' OR firstName ='" + fname.Text + "' OR middleInitial ='" + mname.Text + "' OR lastName ='" + lname.Text +"';";
 				MySqlCommand cmd = new MySqlCommand(searchQuery, conn);
 				MySqlDataAdapter msda = new MySqlDataAdapter();
 				// get result of each column

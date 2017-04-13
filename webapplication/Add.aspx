@@ -22,6 +22,7 @@
                         </strong>
                     </td>
                 </tr>
+				
                 <tr>
                     <td style="width: 410px; text-align: right; height: 39px;">Middle Initial: </td>
                     <td style="width: 355px; text-align: right; height: 39px;">
@@ -33,10 +34,12 @@
 
                         </strong></td>
                 </tr>
+				
                 <tr>
                     <td style="width: 410px; text-align: right">Last Name: </td>
                     <td style="width: 355px; text-align: right;">
                         <asp:TextBox ID="lname" CssClass="form-control" runat="server" Width="327px"></asp:TextBox>
+
                     </td>
                     <td style="width: 480px; text-align: left;">
                         &nbsp;&nbsp;<strong><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter a Last name" ControlToValidate="lname" Text="Please Enter a Last name" Display="Dynamic" style="color: #CC0000"></asp:RequiredFieldValidator>
