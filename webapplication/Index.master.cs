@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Web;
-using System.Web.UI;
+using System.IO;
+using System.Windows.Forms;
+using System.Data;
+using System.Configuration;
 using MySql.Data.MySqlClient;
+using System.Web;
 
 namespace webapplication
 {
@@ -21,7 +24,8 @@ namespace webapplication
 			{
 				if (Request.Cookies["fname"] != null)
 				{
-					Console.WriteLine(Server.HtmlEncode(Request.Cookies["fname"].Value));
+						
+					Response.Write(Request.Cookies["fname"].Value);
 				}
 			}
 			catch (Exception ex)
