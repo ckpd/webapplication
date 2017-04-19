@@ -77,14 +77,9 @@
     <Content Include="Update.aspx" />
     <Content Include="Delete.aspx" />
     <Content Include="Search.aspx" />
-    <Content Include="public\images\De-La-Grenade-Industries-Ltd-2439.jpg" />
-    <Content Include="public\images\burger.jpg" />
-    <Content Include="public\images\commercialEnergy_header2-1.jpg" />
-    <Content Include="public\images\imgres.png" />
-    <Content Include="public\images\lockup.png" />
-    <Content Include="public\images\projectPLUS.png" />
     <Content Include="public\stylesheets\style.css" />
     <Content Include="Index.master" />
+    <Content Include="public\images\logo2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

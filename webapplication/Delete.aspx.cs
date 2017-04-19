@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.Web;
 using System.Web.UI;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace webapplication
@@ -12,11 +14,21 @@ namespace webapplication
 
 		public void searchBtn_Click(object sender, EventArgs args)
 		{
+			searchStudents();
 		}
+
 		public void deleteBtn_Click(object sender, EventArgs args)
 		{
-			deleteUser();
-		}
+            string confirmValue = Request.Form["confirm_value"];
+            if (confirmValue == "Yes")
+            {
+                deleteUser();
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('You clicked NO!')", true);
+            }
+        }
 
 		void deleteUser()
 		{
@@ -28,8 +40,8 @@ namespace webapplication
 				MySqlDataReader reader;
 				conn.Open();
 				reader = cmd.ExecuteReader();
-				Console.WriteLine("data deleted");
-				while (reader.Read())
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Student Deleted!!')", true);
+                while (reader.Read())
 				{
 
 					conn.Close();
@@ -39,6 +51,36 @@ namespace webapplication
 			{
 				Console.WriteLine("Error occured" + ex);
 			}
+		}
+
+
+		void searchStudents()
+		{
+			DataTable dt = new DataTable();
+
+			try
+			{
+				conn.Open();
+				string searchQuery = "SELECT * FROM student WHERE studentid = '" + id.Text + "' OR firstName ='" + fname.Text + "' OR middleInitial ='" + mname.Text + "' OR lastName ='" + lname.Text +"';";
+				MySqlCommand cmd = new MySqlCommand(searchQuery, conn);
+				MySqlDataAdapter msda = new MySqlDataAdapter();
+				// get result of each column
+				msda.SelectCommand = cmd;
+				msda.Fill(dt);
+				StudentGridView.DataSource = dt;
+				StudentGridView.DataBind();
+				//print out
+				Console.WriteLine(fname);
+
+			}
+			catch (MySqlException ex)
+			{
+				MessageBox.Show(" " + ex);
+			}
+			finally
+			{
+			}
+
 		}
 	}
 }

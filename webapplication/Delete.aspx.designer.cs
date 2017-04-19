@@ -23,12 +23,16 @@ namespace webapplication {
 		
 		protected System.Web.UI.WebControls.TextBox lname;
 		
-		protected System.Web.UI.WebControls.DropDownList ProgramList;
-		
 		protected System.Web.UI.WebControls.TextBox id;
+		
+		protected System.Web.UI.WebControls.RangeValidator idValidate;
+		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 		
 		protected System.Web.UI.WebControls.Button searchBtn;
 		
 		protected System.Web.UI.WebControls.Button deleteBtn;
+		
+		protected System.Web.UI.WebControls.GridView StudentGridView;
 	}
 }

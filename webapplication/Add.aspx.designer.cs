@@ -19,19 +19,43 @@ namespace webapplication {
 		
 		protected System.Web.UI.WebControls.TextBox fname;
 		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+		
+		protected System.Web.UI.WebControls.CompareValidator fnameValidate;
+		
 		protected System.Web.UI.WebControls.TextBox mname;
+		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+		
+		protected System.Web.UI.WebControls.CompareValidator mnameValidate;
 		
 		protected System.Web.UI.WebControls.TextBox lname;
 		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+		
+		protected System.Web.UI.WebControls.CompareValidator lnameValidate;
+		
 		protected System.Web.UI.WebControls.TextBox phoneNumberOne;
+		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 		
 		protected System.Web.UI.WebControls.TextBox phoneNumberTwo;
 		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+		
 		protected System.Web.UI.WebControls.FileUpload image;
+		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+		
+		protected System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 		
 		protected System.Web.UI.WebControls.DropDownList ProgramList;
 		
-		protected System.Web.UI.WebControls.TextBox club;
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+		
+		protected System.Web.UI.WebControls.DropDownList club;
+		
+		protected System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
 		
 		protected System.Web.UI.WebControls.Button registerBtn;
 	}

@@ -1,3 +1,8 @@
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: #0881A3 !important;
+}
+
 .Main h1{
     font-size: 3em;
     text-align: center;
@@ -6,7 +11,16 @@
     padding-top: 150px;
     font-family: 'Poiret One', cursive;
 }
+.pageTitle {
+	text-align:center;
+}
 
+.Main img{
+	display: block;
+	margin: 100px auto;
+	width: 300px;
+	height: 300px;
+}
 .navbar{
     background: none;
     margin-bottom: 0px;
@@ -18,7 +32,7 @@ nav{
 }
 .navbar-brand {
     font-family: 'Roboto';
-    font-weight: 700;
+    font-weight: 700px;
 }
 .date {
     background-color: #0881A3;
@@ -30,9 +44,64 @@ nav{
     color: #fff;
     
 }
+
 .form-group{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+
+}
+
+
+/**
+student gridview style
+**/
+
+.StudentGridView {
+  width: 80%;
+  /*this will be the color of the odd row*/
+  background-color: #fff;
+  margin: 5px 0 10px 0;
+  border: solid 1px #525252;
+  border-collapse:collapse;
+  margin: 0 auto;
+  margin-bottom: 10em;
+}
+
+.StudentGridView td {
+  padding: 2px;
+  border: solid 1px lightgray;
+  text-align: center;
+    font-size: 2em;
+
+}
+
+/*header elements*/
+.StudentGridView th {
+  padding: 4px 2px;
+  color: #fff;
+  background: #424242;
+  border-left: solid 1px #525252;
+  font-size: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+ 
+}
+.StudentGridView img{
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 20px;
+  text-align:right;
+  text-transform: capitalize;
+  clear:both;
 }

@@ -1,26 +1,43 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" Inherits="webapplication.Update" %>  
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-
+<br>
+	<br>
+	<h1 class="pageTitle">Update Student</h1> 
+    <script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want to save data?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
 		<form id="form1" runat="server">
-			<div>
-			<p>fname</p>
-			<asp:TextBox id="fname" runat="server"></asp:TextBox>
-			<p>mname</p>
-			<asp:TextBox id="mname" runat="server"></asp:TextBox>
-			<p>lname</p>
-			<asp:TextBox id="lname" runat="server"></asp:TextBox>
-			<p>Programs</p>				
-		    <asp:DropDownList id="ProgramList" runat="server">
-			    <asp:ListItem Value="1">Arts And Science</asp:ListItem>
-				<asp:ListItem Value="2">School Of Medicine</asp:ListItem>
-				<asp:ListItem Value="3">Vet School</asp:ListItem>
-			</asp:DropDownList>
-			<p>ID</p>
-			<asp:TextBox id="id" runat="server"></asp:TextBox>
-			<asp:Button id="searchBtn" Text="Search" OnClick="searchBtn_Click"  runat="server" />
-			<asp:Button id="updateBtn" Text="Update" OnClick="updateBtn_Click"  runat="server" />
+           
+  		<div class="form-group">
+			<br/>
+			<p>First Name</p>
+			<asp:TextBox id="fname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p>Middle Initial</p>
+			<asp:TextBox id="mname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p>Last Name</p>
+			<asp:TextBox id="lname"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<br/>
+			<p> Student ID</p>
+			<asp:TextBox id="id"  CssClass="form-control"  runat="server"></asp:TextBox>
+			<asp:RangeValidator id="idValidate"  ControlToValidate="id" Type="Integer" MinimumValue="0" MaximumValue="2147483647" Text="Enter a Valid Student ID" runat="server" />
 
-				</div>
+			<br/>
+			<asp:Button id="updateBtn" CssClass="btn btn-large btn-success" Text="Update" OnClick="updateBtn_Click"  runat="server"  OnClientClick = "Confirm()"/>
+			
+			</div>
+
 	</form>
 	 </asp:Content>

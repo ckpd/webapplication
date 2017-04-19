@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-		<title>Untitled Page</title>
+		<title>UCC Student Database</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -21,8 +21,9 @@
           <a class="navbar-brand" href="/">WBSD</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav pull-right">
-            <li class="active"><a href="/">Home</a></li>
+					
+          <ul class="nav navbar-nav pull-right">						
+            <li><a href="/">Home</a></li>
             <li><a href="Add.aspx">Add</a></li>
             <li><a href="Update.aspx">Update</a></li>
             <li><a href="Delete.aspx">Delete</a></li>
@@ -31,15 +32,25 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+        <form id="form1" runat="server">
+			<div class="pull-right date">
+		 	<asp:Label id="MessageLBL" runat="server"></asp:Label><p><%= DateTime.Now.ToString("dddd, MMMM dd") %></p>
+			</div>
+		</form>
 
-		<div class="pull-right date">
-		 <p><%= DateTime.Now.ToString("dddd, MMMM dd") %></p>
-		</div>
 		<asp:contentplaceholder id="Main" runat="server" >
 			<div class="Main">
 				<h1>web based Student Directory</h1>
+				<img class="logo" alt="logo" src="public/images/logo2.jpg">
 			</div>
 		</asp:contentplaceholder>
+
+
+		 <footer class="footer">
+      <div class="container">
+        <p class="text-muted">all rights reserved UColC 2017</p>
+      </div>
+    </footer>
 	</body>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
